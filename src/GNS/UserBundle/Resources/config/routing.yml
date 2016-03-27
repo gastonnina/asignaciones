@@ -1,3 +1,29 @@
 gns_user_homepage:
     path:     /
     defaults: { _controller: GNSUserBundle:Default:index }
+
+gns_user_index:
+    path:     /user/index
+    defaults: { _controller: GNSUserBundle:User:index }
+
+gns_user_articles:
+    path:     /user/articles/{page}
+    defaults: { _controller: GNSUserBundle:User:articles, page: 1 }
+    requirements:
+        page: \d+
+        
+gns_user_add:
+    path:     /user/add
+    defaults: { _controller: GNSUserBundle:User:add }
+
+gns_user_edit:
+    path:     /user/edit/{id}
+    defaults: { _controller: GNSUserBundle:User:edit }
+
+gns_user_view:
+    path:     /user/view/{id}
+    defaults: { _controller: GNSUserBundle:User:view }
+
+gns_user_delete:
+    path:     /user/delete/{id}
+    defaults: { _controller: GNSUserBundle:User:delete }
